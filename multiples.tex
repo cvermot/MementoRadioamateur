@@ -1,0 +1,54 @@
+Nous verront plus loin que dans de nombreux cas, on est amené à manipuler des chiffres importants (de l'ordre du million par exemple) ou au contraire très petits (de l'ordre du millième de milliardième). Par exemple, une résistance pourrait avoir une valeur de $1000000 \Omega$ (un million d'ohms). Ou encore, un condensateur (nous verront ce que c'est plus loin), une capacité de $0,000 000 000 001 F$ (un millionième de milliardième de Farad). Ces valeurs, avec un grand nombre de 0, ne sont ni simples à lire, ni très pratiques, car on peut facilement oublier ou ajouter un 0, ce qui changera le résultat final. Pour éviter ce problème, on à inventé des multiples et des sous multiples. Vous en utilisez déjà dans la vie des tous les jours, avec les distances par exemple. Tout le monde connait les mètres, auxquels on à ajouté le kilomètre ($1000 m$) et le millimètre (1 millième de mètre soit $0,001 m$). Entre le milli et le kilo, on trouve le centimètre ($0,01 m$), le décimètre ($0,1 m$), le mètre ($1 m$), le décamètre ($10 m$) et enfin l'hectomètre ($100 m$). Ces unités, on les utilises tous les jours, et il y a fort a parier que vous savez pas sans trop de problèmes de l'une à l'autre.
+    
+    Comme ces unités "usuelles" ne sont pas encore assez grandes (ou assez petites) pour nos besoins, on en a inventé d'autres. Commençons par les multiples :
+    
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+            & \multicolumn{3}{c|}{Giga} & \multicolumn{3}{c|}{Méga} & Kilo & Hecto & Deca & unité \\
+            Symbole & \multicolumn{3}{c|}{G} & \multicolumn{3}{c|}{M} & K & h & da & \\
+        \hline
+    	    Nombre de 0 à ajouter & \multicolumn{3}{c|}{9} & \multicolumn{3}{c|}{6} & 3 & 2 & 1 & 0 \\
+            
+        \hline
+        \end{tabular}
+    \end{center}
+	Les sous mutliples : 
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+                & unité & deci & centi & milli & \multicolumn{3}{c|}{micro} & \multicolumn{3}{c|}{nano} & \multicolumn{3}{c|}{pico}\\
+                Symbole & & d & c & m & \multicolumn{3}{c|}{$\mu$} & \multicolumn{3}{c|}{n} & \multicolumn{3}{c|}{p}  \\
+        	\hline
+        	    Nombre de 0 à ajouter & 0 & 1 & 2 & 3 & \multicolumn{3}{c|}{6} & \multicolumn{3}{c|}{9} & \multicolumn{3}{c|}{12} \\      
+            \hline
+        \end{tabular}
+    \end{center}
+
+	Enfin, le tableau entier :
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+                \multicolumn{3}{|c|}{Giga} & \multicolumn{3}{c|}{Méga} & Kilo & Hecto & Deca & unité & deci & centi & milli & \multicolumn{3}{c|}{micro} & \multicolumn{3}{c|}{nano} & \multicolumn{3}{c|}{pico}\\
+                \multicolumn{3}{|c|}{G} & \multicolumn{3}{c|}{M} & K & h & da & & d & c & m & \multicolumn{3}{c|}{$\mu$} & \multicolumn{3}{c|}{n} & \multicolumn{3}{c|}{p}  \\
+        	\hline
+        \end{tabular}
+    \end{center}
+
+	Ainsi, vous entendrez parfois un radioamateur qu'il a fait du "décamétrique". Cela signifie donc qu'il a trafiqué dans les bandes dont les unités se comptent en dizaines de mètres. La longueur d'onde utilisée va donc de 10 m à 100 m (donc de 1 à 10 dam).
+
+	Il faut faire très attention aux unités, car il n'est pas possible d'additionner deux grandeurs qui ne se trouvent pas dans les mêmes unités. Par exemple, on vous demande de donner la valeur de la somme de deux résistance. La première fait $7,6 M\Omega$ (7,6 mégaohm) et la deuxième fait $15 k\Omega$ (15 kiloohm). Un candidat distrait fera la somme $7,6 + 15 = 21,6$ et répondra faux. Pour additionner, il faut remettre toutes les valeurs dans les mêmes unités. C'est très simple avec un tableau :
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+              \multicolumn{3}{|c|}{\begin{sideways}Giga\end{sideways}} & \multicolumn{3}{c|}{\begin{sideways}Méga\end{sideways}} & \multicolumn{3}{c|}{\begin{sideways}Kilo\end{sideways}} & \begin{sideways}Hecto\end{sideways} & \begin{sideways}Deca\end{sideways} & \begin{sideways}unité\end{sideways} & \begin{sideways}deci\end{sideways} & \begin{sideways}centi\end{sideways} & \begin{sideways}milli\end{sideways} & \multicolumn{3}{c|}{\begin{sideways}micro\end{sideways}} & \multicolumn{3}{c|}{\begin{sideways}nano\end{sideways}} & \multicolumn{3}{c|}{\begin{sideways}pico\end{sideways}} \\
+           \multicolumn{3}{|c|}{G} & \multicolumn{3}{c|}{M} & \multicolumn{3}{c|}{K} & h & da & & d & c & m & \multicolumn{3}{c|}{$\mu$} & \multicolumn{3}{c|}{n} & \multicolumn{3}{c|}{p}  \\
+    	\hline
+    		&&&&&7& 6  &0&0&0&0&0&&&&&&&&&&&& \\
+			&&&&&&&1&5&0&0&0&&&&&&&&&&&& \\
+		\hline
+			&&&&&7&6&1&5&0&0&0&&&&&&&&&&&& \\
+		\hline
+    \end{tabular}
+\end{center}

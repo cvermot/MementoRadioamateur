@@ -1,0 +1,97 @@
+    Lors de l'examen, il ne sera considéré que le cas des transformateurs dits parfaits, c'est à dire dont le rendement est égale à 100\% Dans la réalité, ce genre de transformateur n'existe pas, des pertes sont toujours présentes, et elles se manifestent par un échauffement du transformateur (perte par effet Joule : toute l'énergie transformée en chaleur est "perdue").
+    
+    Le transformateur est représenté dans les circuits par le schéma suivant :
+    \begin{center}
+    \shorthandoff{:!}
+   \begin{circuitikz} \draw
+(0,0) node[transformer] (T) {}
+(T.A1) node[anchor=east] {P1}
+(T.A2) node[anchor=east] {P2}
+(T.B1) node[anchor=west] {S1}
+(T.B2) node[anchor=west] {S2}
+(T.base) node[anchor=south]{Transformateur parfait}
+;\end{circuitikz}
+ \end{center}
+ 
+    On distingue 2 "circuits" sur un transformateur : le primaire et le secondaire. On branche l'alimentation sur le primaire (donc sur le schéma ci-dessus, on branche l'alimentation sur les bornes P1 et P2 (connexion au primaire) et on récupère le courant sur le secondaire (donc entre les bornes S1 et S2).
+    
+    On peut constater que la représentation du transformateur fait figurer 2 bobines. Cela est assez proche de la réalité, car un transformateur est effectivement composé de 2 enroulements : le premier enroulement est le primaire, et le second le secondaire. Il est intéressant de noter qu'il n'y a pas de connexion "électrique" entre ces 2 enroulements, qui sont (et doivent êtres) parfaitement isolés électriquement. Le transfert d'énergie entre les 2 enroulements se fait donc uniquement par induction. Hors, tout comme dans une bobine, il faut pour qu'il y ait une induction que le courant au primaire soit alternatif : \textbf{un transformateur ne fonctionne donc qu'avec du courant alternatif !!!}
+    
+    Donc le branchement de la figure 1 fournira une tension dans la résistance R, en revanche, aucune tension n'existera dans le secondaire de la figure 2 car une pile produit un courant continu.
+    
+        \begin{center}
+        \shorthandoff{:!}
+   \begin{circuitikz} \draw
+(0,0) node[transformer] (T) {}
+
+(-2,-2.1) to[sI=$A$] (-2,0)
+(-2,-2.1) -- (T.A2)
+(-2,0) -- (T.A1)
+
+(2,-2.1) to[european resistor, l_=$R$] (2,0)
+(2,-2.1) -- (T.B2)
+(2,0) -- (T.B1)
+;\end{circuitikz}\begin{circuitikz} \draw
+(0,0) node[transformer] (T) {}
+
+(-2,-2.1) to[battery=$P$] (-2,0)
+(-2,-2.1) -- (T.A2)
+(-2,0) -- (T.A1)
+
+(2,-2.1) to[european resistor, l_=$R$] (2,0)
+(2,-2.1) -- (T.B2)
+(2,0) -- (T.B1)
+;\end{circuitikz}
+ \end{center}
+ 
+    \subsection{Rapport de tension}
+    Nous n'avons pour le moment pas parlé du rapport de transformation, pourtant, c'est bien la le rôle d'un transformateur : transformer une tension. Le plus souvent, on à affaire à des transformateurs réducteur de tension, mais il faut savoir qu'en branchant un transformateur réducteur de tension à l'envers, on obtient un élévateur de tension.
+    
+    Ce qui détermine la tension de sortie d'un transformateur, c'est tout simplement le rapport entre le nombre de spires au secondaire (que nous allons noter $N_S$) et le nombre de spires au primaire (noté $N_P$).
+    
+    \begin{center}
+    \shorthandoff{:!}
+   \begin{circuitikz} \draw
+(0,0) node[transformer] (T) {}
+
+(-2,-2.1) to[sI=$220V$] (-2,0)
+(-2,-2.1) -- (T.A2)
+(-2,0) -- (T.A1)
+
+(2,-2.1) to[european resistor, l_=$R$] (2,0)
+(2,-2.1) -- (T.B2)
+(2,0) -- (T.B1)
+(T.B2) node[anchor=north] {10 spires}
+(T.A2) node[anchor=north] {20 spires}
+
+(4,-1.85) to[voltmeter, l_=$110V$] (4,-0.25)
+(4,-1.85) -- (2,-1.85)
+(4,-0.25) -- (2,-0.25)
+
+;\end{circuitikz}
+ \end{center}
+ 
+    Dans l'exemple ci-dessus, on constate qu'on a 20 spires au primaire ($N_P = 20$) et 10 spires au primaire ($N_S = 10$). On calcul donc le rapport : $r = \dfrac{N_S}{N_P} = \dfrac{10}{20} = 0,5$. Le rapport de transformation de ce transformateur est donc de 0,5, donc la tension de sortie $T_S$ est égale : $T_S = T_E \times r = 220 \times 0,5 = 110V$. \\
+
+	Une autre méthode de calcul est celle des "volts par spire". Considérant que nous avons un primaire de 20 spires alimenté en 220V, on pose $\dfrac{220}{20} = 11$ volts/spire. On a 10 spires au secondaire, donc $11 \times 10 = 110 V$.
+    
+    \subsection{Puissance et transformateur}
+    On a vu dans l'introduction sur les transformateurs que durant l'examen, on ne considérera que le cas des transformateurs parfaits, c'est à dire le cas où aucune perte ne se produit (pas d'échauffement). Il faut donc garder en tête que dans ce cas, \textbf{la puissance consommée en entrée est égale à la puissance délivrée en sortie}. Cela permet de résoudre des problèmes du type : dans le montage suivant, quelle est l'intensité au secondaire ?
+
+ \begin{center}
+ \shorthandoff{:!}
+   \begin{circuitikz} \draw
+(0,0) node[transformer] (T) {}
+(T.base) node[anchor=south]{Transformateur parfait}
+
+(-2,-2.1) to[sI=$300W$] (-2,0)
+(-2,-2.1) -- (T.A2)
+(-2,0) -- (T.A1)
+
+(2,-2.1) to[european resistor, l_=$75V$] (2,0)
+(2,-2.1) -- (T.B2)
+(2,0) -- (T.B1)
+;\end{circuitikz}
+ \end{center}
+ 
+ On sait donc que si on a 300W au primaire, on a également 300W au secondaire. Il suffit ensuite d'appliquer la formule de la puissance ($P = U \times I)$, et on obtient rapidement que le courant dans le secondaire équivaut à 4A.
